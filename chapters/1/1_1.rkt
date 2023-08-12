@@ -1,3 +1,5 @@
+#lang racket/base
+
 ;inputs
 ;(define a 3)
 3

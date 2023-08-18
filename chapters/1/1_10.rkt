@@ -11,16 +11,6 @@
 ;(A 1 10)
 ;(A 2 4)
 ;(A 3 3)
-;Consider the following procedures, where A is the procedure
-;defined above:
-;(define (f n) (A 0 n))
-;(define (g n) (A 1 n))
-;(define (h n) (A 2 n))
-;(define (k n) (* 5 n n))
-;Give concise mathematical definitions for the functions computed
-;by the procedures f, g, and h for positive integer values
-;of n. For example, (k n) computes 5n2.
-
 
 ;Exercise 1.10: e following procedure computes a mathematical
 ;function called Ackermann’s function.
@@ -149,3 +139,28 @@ Y = 4
 (A 1 16) 
 
 ; (A 1 16) == 2^16
+
+
+
+
+;Consider the following procedures, where A is the procedure
+;defined above:
+;(define (f n) (A 0 n))
+;(define (g n) (A 1 n))
+;(define (h n) (A 2 n))
+;(define (k n) (* 5 n n))
+;Give concise mathematical definitions for the functions computed
+;by the procedures f, g, and h for positive integer values
+;of n. For example, (k n) computes 5n2.
+
+;(define (f n) (A 0 n))
+;(f n) -> n*2
+
+;(define (g n) (A 1 n))
+;(g n) -> n^2
+
+;(define (h n) (A 2 n))
+;(h n) -> ...
+
+;(define (k n) (* 5 n n))
+;(k n) -> ...

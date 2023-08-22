@@ -31,8 +31,8 @@
         (+ n_min_1 (* 2 n_min_2) (* 3 n_min_3))
     )
 
-    (define (f_iter n n_min_1 n_min_2 n_min_3)(
-        cond
+    (define (f_iter n n_min_1 n_min_2 n_min_3)
+        (cond
             ((< n 3) 
                 n
             )

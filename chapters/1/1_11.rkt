@@ -26,27 +26,31 @@
 ; c = b
 
 (define (iterative_f n)
-    (f_iter n))
 
-(define (algorithm f_n_min_1 f_n_min_2 f_n_min_3)
-    (+ f_n_min_1 (* 2 f_n_min_2) (* 3 f_n_min_3))
+    (define (algorithm n_min_1 n_min_2 n_min_3)
+        (+ n_min_1 (* 2 n_min_2) (* 3 n_min_3))
+    )
+
+    (define (f_iter n n_min_1 n_min_2 n_min_3)(
+        cond
+            ((< n 3) 
+                n
+            )
+            ((= n 3) 
+                (algorithm 2 1 0)
+            )
+            ((> n 3) 
+                (= n_min_1 (algorithm n_min_1 n_min_2 n_min_3)) 
+                (= n_min_2 n_min_1)
+                (= n_min_3 n_min_2)
+                (- n 1)
+            )
+        )
+    )
+
+    (f_iter n 2 1 0)
+
 )
 
-(define (f_iter n )(
-    cond
-        ((< n 3) 
-            n
-        )
-        ((= n 3) 
-            (algorithm 2 1 0)
-        )
-        ((> n 3) 
-            (+ (algorithm (algorithm 2 1 0) 2 1)
-            (- n 1)
-        )
-    )
-    )
-)   
-
-(display (iterative_f 1))
+(display (iterative_f 4))
 
